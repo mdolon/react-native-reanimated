@@ -135,7 +135,7 @@ export default class AnimatedNode {
   __markUpdated() {
     UPDATED_NODES.push(this);
     if (!propUpdatesEnqueued) {
-      propUpdatesEnqueued = setImmediate(runPropUpdates);
+      propUpdatesEnqueued = setTimeout(runPropUpdates, 0);
     }
   }
 
